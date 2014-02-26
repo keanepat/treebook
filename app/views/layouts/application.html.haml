@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Treebook
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        %a.brand{:href => "#"} Treebook
+        %ul.nav
+          %li.active
+            %a{:href => "#"} Home
+          %li= link_to "All Statuses", statuses_path
+          %li
+            %a{:href => "#"} Link
+    .container
+      %p.notice= notice
+      %p.alert= alert
+      = yield

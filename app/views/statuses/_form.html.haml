@@ -1,0 +1,14 @@
+= simple_form_for(@status, html: {class: "form-horizontal"}) do |f|
+  - if @status.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@status.errors.count, "error")
+        prohibited this status from being saved:
+      %ul
+        - @status.errors.full_messages.each do |msg|
+          %li= msg
+          
+  = f.input :content
+
+  .form-actions
+    = f.button :submit
